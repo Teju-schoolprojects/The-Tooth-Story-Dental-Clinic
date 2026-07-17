@@ -617,13 +617,27 @@ nav {
 }
 
 .service-card {
-  padding: 2.25rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   position: relative;
   overflow: hidden;
   height: 100%;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 0.25rem;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(15, 118, 110, 0.08);
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.03);
 }
 
 .service-card::before {
