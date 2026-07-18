@@ -713,10 +713,9 @@ nav {
 }
 
 .about .container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
-  align-items: center;
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-image-card {
