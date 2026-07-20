@@ -30,6 +30,14 @@
   --text-muted: #475569;
   --text-light: #ffffff;
   
+  /* Playbook v2 Design System Tokens */
+  --color-siteground: #0b1329;
+  --color-sitesurface: #0f172a;
+  --color-siteink: #f8fafc;
+  --color-sitemuted: #94a3b8;
+  --color-siteaccent: #0e6e73;
+  --color-sitegold: #f59e0b;
+
   /* Layout & Shadows */
   --shadow-sm: 0 2px 4px rgba(15, 118, 110, 0.05);
   --shadow-md: 0 10px 25px -5px rgba(15, 118, 110, 0.08), 0 8px 16px -6px rgba(15, 118, 110, 0.08);
@@ -42,6 +50,28 @@
   /* Transition Constants */
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Playbook Utility Layer */
+.sx-hairline { border-color: color-mix(in srgb, currentColor 14%, transparent); }
+.sx-wash { background-color: color-mix(in srgb, var(--primary) 7%, transparent); }
+::selection { background: color-mix(in srgb, var(--secondary) 25%, transparent); }
+
+@keyframes sx-rise { from { transform: translateY(0.55em); opacity: 0; } to { transform: none; opacity: 1; } }
+.sx-rise { animation: sx-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@media (prefers-reduced-motion: reduce) { .sx-rise { animation: none; } }
+
+/* Accordion Click-to-Expand Grid Panel */
+.expandable-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.expandable-panel.is-open {
+  grid-template-rows: 1fr;
+}
+.expandable-content {
+  overflow: hidden;
 }
 
 /* Base resets & styles */
