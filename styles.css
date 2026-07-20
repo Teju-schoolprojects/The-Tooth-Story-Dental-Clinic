@@ -1526,13 +1526,14 @@ footer {
 
 @media (max-width: 1024px) {
   .hero .container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
   }
   
   .hero-content {
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
   }
   
   .hero-image-wrapper {
