@@ -399,34 +399,49 @@ nav {
    HERO SECTION
    ========================================== */
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 8rem;
-  padding-bottom: 5rem;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0b1329 0%, #0f172a 50%, #0f766e 100%);
+  background-color: #0f172a;
 }
 
-.hero::before {
-  content: '';
+/* Full-Screen Feature Wall Background Layer */
+.hero-bg-container {
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 55%;
-  height: 80%;
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  filter: brightness(1.08) contrast(1.08);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.65) 35%, rgba(15, 23, 42, 0.10) 70%, transparent 100%);
   pointer-events: none;
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 3.5rem;
-  align-items: center;
-  position: relative;
+  display: flex;
+  justify-content: flex-start;
   z-index: 2;
+  position: relative;
 }
 
 .hero-content {
@@ -435,6 +450,7 @@ nav {
   align-items: flex-start;
   text-align: left;
   gap: 1.5rem;
+  max-width: 650px;
 }
 
 .hero-rating {
@@ -446,6 +462,7 @@ nav {
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title span {
@@ -456,49 +473,32 @@ nav {
 
 .hero-desc {
   font-size: 1.125rem;
-  color: rgba(241, 245, 249, 0.95);
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 580px;
   line-height: 1.6;
   text-align: left;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
-.hero-feature-card {
-  position: relative;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 35px rgba(217, 119, 6, 0.25);
-  border: 3px solid rgba(255, 255, 255, 0.15);
-  background: #000000;
-}
-
-.hero-feature-img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.hero-feature-card:hover .hero-feature-img {
-  transform: scale(1.03);
-}
-
-.hero-feature-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(10px);
-  color: #fbbf24;
-  padding: 0.6rem 1.25rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: 1px solid rgba(251, 191, 36, 0.35);
+.hero-ctas {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.hero-ctas .btn-outline {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.hero-ctas .btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--primary-dark);
+  border-color: #ffffff;
 }
 
 .hero-ctas {
